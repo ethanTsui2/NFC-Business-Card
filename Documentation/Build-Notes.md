@@ -52,3 +52,38 @@ The URL opens:
 `https://ethantsui2.github.io/Project-Atlas/`
 
 A user does not need the NFC Tools app to open it.
+
+
+## Current Design Revision
+
+The front layout was refined without changing the overall concept:
+
+- Project Atlas graphic kept as the main visual
+- `ETHAN TSUI` and `MECHANICAL ENGINEERING` kept as the main identity block
+- `TAP TO CONNECT` kept compact instead of making it wider
+- NFC/contactless icon reduced slightly so it does not overpower the text
+- `DESIGN • BUILD • SOLVE` kept centered at the bottom
+
+The back was simplified around one centered QR code and `SCAN TO CONNECT`.
+
+The QR code is approximately **33 mm square**. I kept it large enough to scan reliably without letting it dominate the full back of the card.
+
+The QR code points to my **LinkedIn**, while the embedded NFC tag points to the **Project Atlas portfolio website**. This gives two different connection paths:
+
+- NFC tap -> project portfolio
+- QR scan -> LinkedIn
+
+## Toolpath Revision
+
+A 45° first-layer infill direction looked smooth physically, but the diagonal extrusion lines were still visible under the holographic finish.
+
+The current version uses:
+
+- Rectilinear bottom surface pattern
+- 0° infill direction
+- horizontal first-layer passes across the long edge of the card
+- 0.20 mm initial-layer line width
+- Arachne minimum wall width at 75%
+- Arachne minimum feature size at 15%
+
+This reduced the large sliced gaps that appeared in narrow Atlas features while keeping the first-layer detail readable.

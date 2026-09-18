@@ -30,7 +30,7 @@ These settings are optimized for a thin, face-down, multicolor card with small t
 | Setting | Value |
 |---|---:|
 | Default | 0.22 mm |
-| Initial layer | 0.22 mm |
+| Initial layer | 0.20 mm |
 | Outer wall | 0.22 mm |
 | Inner wall | 0.22 mm |
 | Top surface | 0.22 mm |
@@ -38,7 +38,7 @@ These settings are optimized for a thin, face-down, multicolor card with small t
 | Internal solid infill | 0.22 mm |
 | Support | 0.22 mm |
 
-The narrow initial-layer line width helps preserve the small text and Atlas details. If the first layer starts showing gaps, increase this slightly and test again.
+The 0.20 mm initial-layer line width gave the slicer more room to fit small Atlas and text features without leaving obvious toolpath gaps. Preview should still be checked before printing.
 
 ## Seam
 
@@ -82,10 +82,10 @@ For this project, the front finish comes from the build plate rather than ironin
 | Wall transitioning filter margin | 25% |
 | Wall transition length | 100% |
 | Wall distribution count | 1 |
-| Minimum wall width | 85% |
-| Minimum feature size | 25% |
+| Minimum wall width | 75% |
+| Minimum feature size | 15% |
 
-Arachne helps preserve narrow text strokes and small graphic features.
+Arachne helps preserve narrow text strokes and small graphic features. Lowering the minimum wall width to 75% and minimum feature size to 15% reduced visible gaps in the sliced Atlas gripper and other narrow first-layer features.
 
 ## Advanced Wall Settings
 
@@ -119,19 +119,19 @@ The **Only one wall on first layer** option is important for this design because
 
 | Setting | Value |
 |---|---|
-| Top surface pattern | Hilbert Curve |
+| Top surface pattern | Monotonic |
 | Top surface density | 100% |
 | Top shell layers | 4 |
 | Top shell thickness | 0.4 mm |
 | Top paint penetration layers | 7 |
-| Bottom surface pattern | Monotonic |
+| Bottom surface pattern | Rectilinear |
 | Bottom surface density | 100% |
 | Bottom shell layers | 4 |
 | Bottom shell thickness | 0.4 mm |
 | Bottom paint penetration layers | 5 |
 | Internal solid infill pattern | Rectilinear |
 
-The Hilbert Curve is being used on the top/back surface for an intentional technical-looking texture. If you want the cleanest possible QR background, Monotonic is a safer alternative.
+The current version uses a Monotonic top surface for the QR side and a Rectilinear bottom surface for the face-down front. The infill direction is set to 0° so the visible first-layer lines run horizontally across the long edge of the card instead of diagonally.
 
 ### Sparse Infill
 
@@ -143,6 +143,7 @@ The Hilbert Curve is being used on the top/back surface for an intentional techn
 | Length of sparse infill anchor | 400% |
 | Maximum length of sparse infill anchor | 20 |
 | Infill/Wall overlap | 15% |
+| Infill direction | 0° |
 
 At 100% infill, the card prints essentially solid.
 
@@ -208,6 +209,8 @@ The slower bridge speed is useful for the layer that closes over the embedded NF
 ## First-Layer Graphics
 
 The front is printed face-down, so the first layer is the presentation surface.
+
+For the current version, the first-layer toolpath is intentionally horizontal. The earlier 45° infill direction left diagonal lines that were visible in the finished card even though the surface itself was smooth.
 
 Before printing, use **Preview** and confirm:
 

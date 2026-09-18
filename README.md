@@ -75,7 +75,7 @@ Main problems I worked through:
 - small-text limits with the 0.4 mm nozzle
 - front/back graphics showing through on early 0.8 mm prototypes
 
-See [Print Settings](Documentation/Print-Settings.md) and [Build Notes](Documentation/Build-Notes.md).
+See [Print Settings](Documentation/Print-Settings.md), [Build Notes](Documentation/Build-Notes.md), and the [Bill of Materials](Documentation/BOM.md).
 
 ## Repository Guide
 
@@ -83,7 +83,7 @@ See [Print Settings](Documentation/Print-Settings.md) and [Build Notes](Document
 |---|---|
 | [`CAD/`](CAD/) | Final card CAD and NFC cavity notes |
 | [`Print-Files/`](Print-Files/) | Slicer/project files and export notes |
-| [`Documentation/`](Documentation/) | NFC setup, print settings, and build notes |
+| [`Documentation/`](Documentation/) | NFC setup, print settings, build notes, and BOM |
 | [`Images/`](Images/) | Final card photos and prototype images |
 
 ## Project Status

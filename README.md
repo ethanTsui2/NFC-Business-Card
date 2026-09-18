@@ -13,8 +13,9 @@ I built this because I wanted something more memorable than a normal paper card 
 - Material: PLA
 - Front: black body with white graphics printed face-down on a holographic/effect plate
 - NFC: embedded **NTAG215** tag
-- Backup: functional QR code
-- Link target: [Project Atlas portfolio](https://ethantsui2.github.io/Project-Atlas/)
+- NFC destination: [Project Atlas portfolio](https://ethantsui2.github.io/Project-Atlas/)
+- QR destination: LinkedIn
+- QR size: approximately **33 mm square**
 
 The NFC tag has been programmed and tested successfully. A phone can open the site directly without needing the NFC Tools app.
 
@@ -33,10 +34,12 @@ The front graphics print against the build plate so the visible surface picks up
 
 ## Back Design
 
-The back uses a QR code as a fallback and is intentionally simple:
+The back uses a centered LinkedIn QR code for a faster direct connection path and is intentionally simple:
 
-- QR code
+- approximately 33 mm QR code
 - `SCAN TO CONNECT`
+
+The NFC and QR do not duplicate each other: tapping the card opens the Project Atlas portfolio, while scanning the QR opens LinkedIn.
 
 ## Why I Used a 0.2 mm Nozzle
 
@@ -88,7 +91,7 @@ See [Print Settings](Documentation/Print-Settings.md), [Build Notes](Documentati
 
 ## Project Status
 
-The NFC workflow has been tested successfully and the card design has gone through multiple print iterations. The current version uses the 0.2 mm nozzle and embedded NFC approach developed from those tests.
+The NFC workflow has been tested successfully and the card design has gone through multiple print iterations. The current version uses the 0.2 mm nozzle, embedded NFC, a centered LinkedIn QR code, and a horizontal first-layer toolpath developed from those tests.
 
 ## Related Project
 

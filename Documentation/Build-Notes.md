@@ -77,7 +77,7 @@ The QR code points to my **LinkedIn**, while the embedded NFC tag points to the 
 
 A 45° first-layer infill direction looked smooth physically, but the diagonal extrusion lines were still visible under the holographic finish.
 
-The current version uses:
+An earlier tested revision used:
 
 - Rectilinear bottom surface pattern
 - 0° infill direction
@@ -90,6 +90,6 @@ This reduced the large sliced gaps that appeared in narrow Atlas features while 
 
 ## Final Thickness and Profile
 
-The final card is **0.8 mm thick**, reduced from the intermediate 1.6 mm design. The latest documented slicer settings are the final process baseline (see [Print Settings](Print-Settings.md)). At 0.10 mm layer height, the nominal thickness corresponds to eight layers. The NFC cavity and pause must be checked against this geometry rather than copied from the thicker design.
+The final card is **0.8 mm thick**, reduced from the intermediate 1.6 mm design. The active settings extracted from the November 24, 2026 saved project are the final process baseline (see [Print Settings](Print-Settings.md)). At 0.10 mm layer height, the nominal thickness corresponds to eight layers. The NFC cavity and pause must be checked against this geometry rather than copied from the thicker design.
 
-The card has been used at career fairs. Before reproducing the thinner version, verify the finished card's NFC read, QR scan, graphic opacity, and handling strength. Final CAD cavity dimensions and the exported process file are not yet recorded here.
+The card has been used at career fairs. Before reproducing the thinner version, verify the finished card's NFC read, QR scan, graphic opacity, and handling strength. The saved project verifies the 0.8 mm bodies and negative cavity volumes. Its active profile differs from the earlier horizontal-toolpath revision: 45° infill direction, Hilbert Curve top, zig-zag bottom and solid infill, 12 mm/s initial layer speed and 40 mm/s top surface speed. The saved pause is at Z = 0.5 mm for plate ID 3 only. Check the active plate and sliced preview before manufacturing. The mixed-design source project is not published.

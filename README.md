@@ -91,7 +91,7 @@ See [Print Settings](Documentation/Print-Settings.md), [Build Notes](Documentati
 
 ## Project Status
 
-The NFC workflow has been tested successfully and the card design has gone through multiple print iterations. The final design returns to a **0.8 mm** card thickness after testing thicker versions. The final process uses the 0.2 mm nozzle, embedded NFC, a centered LinkedIn QR code, and a horizontal first-layer toolpath. See the documented [final print profile](Documentation/Print-Settings.md). The NFC cavity and pause must be checked against the thinner geometry before printing.
+The NFC workflow has been tested successfully and the card design has gone through multiple print iterations. The final design returns to a **0.8 mm** card thickness after testing thicker versions. The final process uses the 0.2 mm nozzle, embedded NFC, a centered LinkedIn QR code, and the saved project profile with a Hilbert Curve top surface and 45° infill direction. See the documented [final print profile](Documentation/Print-Settings.md). The 0.8 mm geometry has been verified from the November 24, 2026 Bambu Studio project. The saved pause is at 0.5 mm for plate ID 3 only; verify or add a pause on each active plate before printing.
 
 The native CAD, Bambu Studio project, and finished-card photos are not yet included in this repository.
 

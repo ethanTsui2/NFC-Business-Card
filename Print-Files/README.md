@@ -1,6 +1,6 @@
 # Print Files
 
-This folder is for the final slicer/project files for the **0.8 mm** card. The [documented final process profile](../Documentation/Print-Settings.md) is available; the native `.3mf` and CAD exports are not yet uploaded.
+This folder is for the final slicer/project files for the **0.8 mm** card. The [documented final process profile](../Documentation/Print-Settings.md) is available; the native `.3mf` and CAD exports are not yet uploaded. The November 24, 2026 mixed-design project was inspected to verify geometry and settings; a project containing only the intended public design should be exported for distribution.
 
 Recommended files:
 
@@ -17,6 +17,6 @@ Before printing, verify:
 - correct filament assignments
 - correct first-layer graphics
 - clean QR code
-- NFC pause while the cavity is still open, with no part of the tag projecting into the next nozzle path
+- NFC pause while the cavity is still open, with no part of the tag projecting into the next nozzle path (saved pause: Z = 0.50 mm, plate ID 3 only; verify active plate and closure sequence)
 - front and back graphics remain flush and do not overlap through the card
 - scan the finished QR and test NFC before batch printing

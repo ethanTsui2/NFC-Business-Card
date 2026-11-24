@@ -1,6 +1,6 @@
 # Print Settings
 
-This is the final documented process profile for the NFC business card on a Bambu Lab A1 with a 0.2 mm nozzle. I am documenting them so anyone who wants to make a similar card has a clear starting point.
+This is the final process profile extracted from the active project settings in the November 24, 2026 Bambu Studio 3MF (version 02.09.01.70) for the NFC business card on a Bambu Lab A1 with a 0.2 mm nozzle. I am documenting them so anyone who wants to make a similar card has a clear starting point.
 
 These settings are optimized for a thin, face-down, multicolor card with small text, a detailed graphic, a QR code, and an embedded NFC tag. They are not universal settings for every printer or filament, so use Bambu Studio Preview and a small test coupon before committing to a full card.
 
@@ -31,6 +31,7 @@ These settings are optimized for a thin, face-down, multicolor card with small t
 |---|---:|
 | Default | 0.22 mm |
 | Initial layer | 0.20 mm |
+| Initial layer infill | 0.25 mm |
 | Outer wall | 0.22 mm |
 | Inner wall | 0.22 mm |
 | Top surface | 0.22 mm |
@@ -119,19 +120,19 @@ The **Only one wall on first layer** option is important for this design because
 
 | Setting | Value |
 |---|---|
-| Top surface pattern | Monotonic |
+| Top surface pattern | Hilbert Curve |
 | Top surface density | 100% |
 | Top shell layers | 4 |
 | Top shell thickness | 0.4 mm |
 | Top paint penetration layers | 7 |
-| Bottom surface pattern | Rectilinear |
+| Bottom surface pattern | Zig-zag (`zig-zag`) |
 | Bottom surface density | 100% |
 | Bottom shell layers | 4 |
 | Bottom shell thickness | 0.4 mm |
 | Bottom paint penetration layers | 5 |
-| Internal solid infill pattern | Rectilinear |
+| Internal solid infill pattern | Zig-zag (`zig-zag`) |
 
-The current version uses a Monotonic top surface for the QR side and a Rectilinear bottom surface for the face-down front. The infill direction is set to 0° so the visible first-layer lines run horizontally across the long edge of the card instead of diagonally.
+The saved project uses a Hilbert Curve top surface and the stored pattern identifier `zig-zag` for the bottom and internal solid infill. The saved infill direction is 45°. The earlier horizontal 0° toolpath was a development revision.
 
 ### Sparse Infill
 
@@ -139,11 +140,11 @@ The current version uses a Monotonic top surface for the QR side and a Rectiline
 |---|---:|
 | Sparse infill density | 100% |
 | Fill multiline | 1 |
-| Sparse infill pattern | Rectilinear |
+| Sparse infill pattern | Zig-zag (`zig-zag`) |
 | Length of sparse infill anchor | 400% |
 | Maximum length of sparse infill anchor | 20 |
 | Infill/Wall overlap | 15% |
-| Infill direction | 0° |
+| Infill direction | 45° |
 
 At 100% infill, the card prints essentially solid except for the modeled NFC cavity. At 0.8 mm thickness and 0.10 mm layer height, there are eight nominal layers; the four top and four bottom shell layers can occupy the entire thickness. Preview the cavity, shell paths, and color transitions rather than assuming a separate sparse-infill region exists.
 
@@ -153,7 +154,7 @@ At 100% infill, the card prints essentially solid except for the modeled NFC cav
 
 | Setting | Value |
 |---|---:|
-| Initial layer | 10 mm/s |
+| Initial layer | 12 mm/s |
 | Initial layer infill | 15 mm/s |
 
 These are intentionally slow because the first layer contains the visible text and graphics.
@@ -169,7 +170,7 @@ These are intentionally slow because the first layer contains the visible text a
 | Sparse infill | 100 mm/s |
 | Internal solid infill | 100 mm/s |
 | Vertical shell speed | 80% |
-| Top surface | 60 mm/s |
+| Top surface | 40 mm/s |
 | Slow down for overhangs | On |
 
 ### Overhang and Bridge Speeds
@@ -206,11 +207,35 @@ The slower bridge speed is useful for the layer that closes over the embedded NF
 | Top surface | 1500 mm/s² |
 | Sparse infill | 100% |
 
+## Filament and Retraction
+
+| Setting | Saved value |
+|---|---|
+| Nozzle temperature, first and later layers | 220°C |
+| Selected bed type | High Temp Plate |
+| High Temp Plate temperature, first and later layers | 65°C |
+| Filament flow ratio | 0.98 (all four slots) |
+| Machine retraction length | 0.8 mm |
+| Retraction / deretraction speed | 30 / 30 mm/s |
+| Machine minimum retraction travel | 1 mm |
+| Machine wipe distance | 2 mm |
+| Machine retract before wipe | 0% |
+| Z hop | 0.4 mm (Auto Lift) |
+| White Generic PLA minimum retraction travel | 0.2 mm |
+| White Generic PLA retract before wipe | 70% |
+| White Generic PLA wipe distance | 0.5 mm |
+| White Generic PLA max volumetric speed | 1.6 mm³/s |
+| Other Bambu PLA Basic slots max volumetric speed | 2.0 mm³/s |
+| Prime tower | Enabled |
+| Supports | Disabled |
+
+The white Generic PLA slot explicitly overrides retraction and wipe settings; the other slots inherit the machine defaults for those fields. The configured 0.98 flow ratio is a saved value, not a measured calibration result.
+
 ## First-Layer Graphics
 
 The front is printed face-down, so the first layer is the presentation surface.
 
-For the current version, the first-layer toolpath is intentionally horizontal. The earlier 45° infill direction left diagonal lines that were visible in the finished card even though the surface itself was smooth.
+During development, horizontal first-layer passes were tested to reduce visible diagonal lines. The final saved project has a 45° infill-direction setting; inspect the actual first-layer paths in Preview rather than assuming their orientation.
 
 Before printing, use **Preview** and confirm:
 
@@ -223,7 +248,7 @@ Keeping the front graphics shallow reduces filament changes and purge waste.
 
 ## NFC Pause
 
-The NFC tag should be inserted at the last layer where the cavity is still open. The pause must be checked again for the final 0.8 mm geometry; the thicker 1.6 mm version is superseded. Exact cavity dimensions and pause layer are not documented.
+The NFC tag should be inserted at the last layer where the cavity is still open. The pause must be checked again for the final 0.8 mm geometry; the thicker 1.6 mm version is superseded. The saved cavity negative volumes are 0.10 or 0.12 mm deep, centered at Z ≈ 0.40 mm. The saved custom pause M400 U1 is at Z = 0.50 mm for plate ID 3 only. The two listed plates (IDs 1 and 2) have no recorded pause. Inspect the closure sequence and set the pause before the first bridging/closing layer on the intended plate.
 
 Before starting the final print:
 
@@ -246,4 +271,4 @@ This makes it much faster to check stringing, blobs, first-layer fill, and graph
 
 ## Notes
 
-The settings above are the final documented process baseline. The listed values are retained from the last recorded profile; filament-specific overrides (including retraction, temperatures, and flow calibration) and the final exported `.3mf` have not been recorded here. Filament behavior, build plates, and printer calibration can still change the result. Verify a test print before batching.
+The active `Metadata/project_settings.config` is the source for the final values. The embedded process preset retains older values (0.14 mm initial layer height, 20 mm/s initial infill speed, 60 mm/s top speed); these are not the active project values. The source project contains multiple designs and is not published. No sliced G-code or print-time/material estimates were present. Filament behavior, build plates, and printer calibration can still change the result. Verify a test print before batching.

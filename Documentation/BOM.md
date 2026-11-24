@@ -18,6 +18,7 @@ These were used during development but were not bought only for this project:
 - AMS Lite
 - black PLA
 - white PLA
+- optional alternative PLA colors for customized designs
 - CAD software
 - Bambu Studio
 - phone with NFC capability
@@ -34,4 +35,4 @@ At TTD 62.90 for 50 tags:
 
 The holographic build plate and 0.2 mm hotend are reusable tooling, so I do not treat their full purchase price as the material cost of a single card.
 
-PLA usage and purge waste depend on the final slicer profile and are not included here yet. Once the final print is locked, I can calculate the approximate material cost per card from Bambu Studio's filament usage.
+The final card thickness is 0.8 mm. PLA usage, purge waste, electricity, and failed-print allowance are not yet recorded for the final design. Use the sliced filament totals for the actual number of cards in a batch rather than extrapolating from the older 1.6 mm version. Tooling is reusable and one NFC tag is used per card.

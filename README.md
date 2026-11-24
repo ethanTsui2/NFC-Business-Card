@@ -7,7 +7,7 @@ I built this because I wanted something more memorable than a normal paper card 
 ## Final Concept
 
 - Standard business-card footprint: **85.6 x 54 mm**
-- Target thickness: **1.6 mm**
+- Final thickness: **0.8 mm**
 - Printer: **Bambu Lab A1**
 - Nozzle: **0.2 mm**
 - Material: PLA
@@ -76,7 +76,7 @@ Main problems I worked through:
 - tiny blobs at the end of letter fills
 - excessive filament changes when white graphics extended through multiple layers
 - small-text limits with the 0.4 mm nozzle
-- front/back graphics showing through on early 0.8 mm prototypes
+- front/back graphics showing through on early 0.8 mm prototypes, before refining the graphic depth and print profile
 
 See [Print Settings](Documentation/Print-Settings.md), [Build Notes](Documentation/Build-Notes.md), and the [Bill of Materials](Documentation/BOM.md).
 
@@ -91,7 +91,9 @@ See [Print Settings](Documentation/Print-Settings.md), [Build Notes](Documentati
 
 ## Project Status
 
-The NFC workflow has been tested successfully and the card design has gone through multiple print iterations. The current version uses the 0.2 mm nozzle, embedded NFC, a centered LinkedIn QR code, and a horizontal first-layer toolpath developed from those tests.
+The NFC workflow has been tested successfully and the card design has gone through multiple print iterations. The final design returns to a **0.8 mm** card thickness after testing thicker versions. The final process uses the 0.2 mm nozzle, embedded NFC, a centered LinkedIn QR code, and a horizontal first-layer toolpath. See the documented [final print profile](Documentation/Print-Settings.md). The NFC cavity and pause must be checked against the thinner geometry before printing.
+
+The native CAD, Bambu Studio project, and finished-card photos are not yet included in this repository.
 
 ## Related Project
 

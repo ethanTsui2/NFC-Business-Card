@@ -1,6 +1,6 @@
 # Print Settings
 
-These are the settings I am currently using for the final NFC business card on a Bambu Lab A1 with a 0.2 mm nozzle. I am documenting them so anyone who wants to make a similar card has a clear starting point.
+This is the final documented process profile for the NFC business card on a Bambu Lab A1 with a 0.2 mm nozzle. I am documenting them so anyone who wants to make a similar card has a clear starting point.
 
 These settings are optimized for a thin, face-down, multicolor card with small text, a detailed graphic, a QR code, and an embedded NFC tag. They are not universal settings for every printer or filament, so use Bambu Studio Preview and a small test coupon before committing to a full card.
 
@@ -12,7 +12,7 @@ These settings are optimized for a thin, face-down, multicolor card with small t
 - **Material:** PLA
 - **Base process:** 0.10 mm Standard @ BBL A1 0.2 nozzle
 - **Front surface:** printed face-down on a holographic/effect build plate
-- **Card thickness:** approximately 1.6 mm
+- **Card thickness:** 0.8 mm
 - **Card size:** approximately 85.6 x 54 mm
 
 ## Quality
@@ -145,7 +145,7 @@ The current version uses a Monotonic top surface for the QR side and a Rectiline
 | Infill/Wall overlap | 15% |
 | Infill direction | 0° |
 
-At 100% infill, the card prints essentially solid.
+At 100% infill, the card prints essentially solid except for the modeled NFC cavity. At 0.8 mm thickness and 0.10 mm layer height, there are eight nominal layers; the four top and four bottom shell layers can occupy the entire thickness. Preview the cavity, shell paths, and color transitions rather than assuming a separate sparse-infill region exists.
 
 ## Speed
 
@@ -223,7 +223,7 @@ Keeping the front graphics shallow reduces filament changes and purge waste.
 
 ## NFC Pause
 
-The NFC tag should be inserted at the last layer where the cavity is still open.
+The NFC tag should be inserted at the last layer where the cavity is still open. The pause must be checked again for the final 0.8 mm geometry; the thicker 1.6 mm version is superseded. Exact cavity dimensions and pause layer are not documented.
 
 Before starting the final print:
 
@@ -246,4 +246,4 @@ This makes it much faster to check stringing, blobs, first-layer fill, and graph
 
 ## Notes
 
-The settings above are the actual profile used during development of this card. Filament behavior, build plates, and printer calibration can still change the result, so use them as a strong starting point rather than assuming every printer will behave identically.
+The settings above are the final documented process baseline. The listed values are retained from the last recorded profile; filament-specific overrides (including retraction, temperatures, and flow calibration) and the final exported `.3mf` have not been recorded here. Filament behavior, build plates, and printer calibration can still change the result. Verify a test print before batching.

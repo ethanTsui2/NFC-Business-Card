@@ -29,6 +29,10 @@ Other people do not need NFC Tools to open the site.
 - test through a similar amount of PLA if possible
 - leave the tag writable unless there is a reason to permanently lock it
 
+## Final 0.8 mm Card
+
+The final body thickness is 0.8 mm. Verify the tag's actual thickness without its release liner and confirm that the modeled cavity leaves continuous PLA above and below it. The final cavity depth and pause layer depend on the actual geometry; they are not specified here. Do not reuse pause heights from the 1.6 mm revision.
+
 ## Print Pause
 
 Pause at the final layer where the NFC cavity is still open.
@@ -40,3 +44,4 @@ At the pause:
 3. Make sure nothing projects above the cavity.
 4. Resume the print.
 5. Confirm the next layer closes over the tag cleanly.
+6. After the card cools, test the NFC again and scan the QR code.

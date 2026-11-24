@@ -20,7 +20,7 @@ The first prototype was about 0.8 mm thick and printed with a 0.4 mm nozzle. The
 
 ## Prototype 2
 
-The next version used a black card with white graphics. The QR code worked, but small text was rough and the card was still too thin.
+The next version used a black card with white graphics. The QR code worked, but small text was rough and the early thin design had show-through concerns.
 
 ## 0.2 mm Nozzle
 
@@ -61,7 +61,7 @@ The front layout was refined without changing the overall concept:
 - Project Atlas graphic kept as the main visual
 - `ETHAN TSUI` and `MECHANICAL ENGINEERING` kept as the main identity block
 - `TAP TO CONNECT` kept compact instead of making it wider
-- NFC/contactless icon reduced slightly so it does not overpower the text
+- NFC/contactless icon and text spacing refined for legibility
 - `DESIGN • BUILD • SOLVE` kept centered at the bottom
 
 The back was simplified around one centered QR code and `SCAN TO CONNECT`.
@@ -87,3 +87,9 @@ The current version uses:
 - Arachne minimum feature size at 15%
 
 This reduced the large sliced gaps that appeared in narrow Atlas features while keeping the first-layer detail readable.
+
+## Final Thickness and Profile
+
+The final card is **0.8 mm thick**, reduced from the intermediate 1.6 mm design. The latest documented slicer settings are the final process baseline (see [Print Settings](Print-Settings.md)). At 0.10 mm layer height, the nominal thickness corresponds to eight layers. The NFC cavity and pause must be checked against this geometry rather than copied from the thicker design.
+
+The card has been used at career fairs. Before reproducing the thinner version, verify the finished card's NFC read, QR scan, graphic opacity, and handling strength. Final CAD cavity dimensions and the exported process file are not yet recorded here.

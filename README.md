@@ -1,6 +1,10 @@
 # NFC Business Card
 
-**[Explore the project website](https://ethantsui2.github.io/NFC-Business-Card/)** — interactive design concepts and manufacturing overview (requires GitHub Pages to be enabled).
+## Project Website
+
+**[View the NFC Business Card Website ↗](https://ethantsui2.github.io/NFC-Business-Card/)**
+
+Explore the interactive design collection, color previews, NFC integration, and manufacturing process.
 
 A custom 3D printed business card that combines multicolor FDM printing, an embedded NFC tag, a QR code backup, and a web portfolio.
 
